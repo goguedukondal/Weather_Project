@@ -125,6 +125,9 @@ cursor: pointer;
   padding: 5px;
 }
 .norow{
-  background-color: yellow;
+  background-color: white;
   
+}
+.color{
+  background-color: yellow;
 }
