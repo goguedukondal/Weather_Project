@@ -18,13 +18,13 @@ function DetailTable({data,cityData,setCityData,cityName,allCities,setAllCities}
 
   return (
      <>
-            <tr className={cityName!==data.name?"row":"norow"}>
-                <td className="d1">{data.name}</td>
-                <td className="d2"><input className="input" value={value} onChange={(e)=>setValue(e.target.value)}/></td>
-                <td className="d3">{data.temp_in_celsius}</td>
-                <td className="d4">{data.pressure_in_hPa}</td>
-                <td className="d5">24</td>
-                <td className="delete" onClick={()=>del(data.name)} >delete </td>
+            <tr className={cityName!==data.name?"norow":"color"}>
+                <td className=cityName!==data.name?"d1":"color d1"}>{data.name}</td>
+                <td className=cityName!==data.name?"d2":"color d2"}><input className="input" value={value} onChange={(e)=>setValue(e.target.value)}/></td>
+                <td className=cityName!==data.name?"d3":"color d3"}>{data.temp_in_celsius}</td>
+                <td className=cityName!==data.name?"d4":"color d4"}>{data.pressure_in_hPa}</td>
+                <td className=cityName!==data.name?"d5":"color d5"}>24</td>
+                <td className=cityName!==data.name?"delete":"color delete"} onClick={()=>del(data.name)} >delete </td>
               </tr>
               </>
   )       
