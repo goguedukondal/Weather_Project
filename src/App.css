@@ -20,12 +20,12 @@ flex-direction: row;
 .t1,.t2,.t3,.t4,.t5{
   height: 40px;
 }
-.t0{
+.t{
   border-bottom: 1px solid black;
   width: 30px;
   border: 2px solid green;
 }
-.t{
+.t0{
   border-bottom: 1px solid black;
   width: 30px;
 }
