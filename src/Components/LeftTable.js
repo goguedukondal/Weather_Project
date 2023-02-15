@@ -42,18 +42,18 @@ const LeftTable = () => {
           <tr>
             <td className={isCityDataFetched?"t":"t0"}>London</td>
           </tr>
-        </tbody>
-        <tbody className="t3">
+        
+        
           <tr>
             <td className={isCityDataFetched?"t":"t0"}>New York</td>
           </tr>
-        </tbody>
-        <tbody className="t4">
+       
+        
           <tr>
             <td className={isCityDataFetched?"t":"t0"}>Los Angeles</td>
           </tr>
-        </tbody>
-        <tbody className="t5">
+       
+        
           <tr>
             <td className={isCityDataFetched?"t":"t0"}>Las Vegas</td>
           </tr>
