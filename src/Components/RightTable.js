@@ -9,7 +9,10 @@ function RightTable() {
  const input = useRef();
  const getSearch=()=>{
   setCityName(input.current.value);
- }
+ setTimeout(() => {
+  setCityName("");
+ }, 3000);
+  
  
   return (
     <div className="city_details">
