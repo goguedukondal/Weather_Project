@@ -3,7 +3,10 @@ import { MyContext } from "../Context/Context";
 import { useContext } from "react";
 import DetailTable from "./DetailTable";
 
+
 function RightTable() {
+  
+
   const [cityData,allCities,setCityData,setAllCities,cityName,setCityName] = useContext(MyContext);
 
  const input = useRef();
@@ -13,6 +16,8 @@ function RightTable() {
   setCityName("");
  }, 3000);
   
+  
+ }
  
   return (
     <div className="city_details">
@@ -47,8 +52,10 @@ function RightTable() {
             <>
             {
               cityData.map((item,index)=>{
+                console.log(item.name);
                 return(
                   < DetailTable data={item} 
+                    
                   key={index} 
                   
                   cityData={cityData} 
