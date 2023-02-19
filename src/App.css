@@ -17,7 +17,7 @@ flex-direction: row;
   
   
 }
-.t2{
+.t1,.t2,.t3,.t4,.t5{
   height: 40px;
 }
 .t{
@@ -47,6 +47,7 @@ flex-direction: row;
   border: none;
   height: 30px;
   border-radius: 5px;
+  cursor: pointer;
   
 }
 .city{
@@ -66,6 +67,7 @@ flex-direction: row;
   border: none;
   height: 25px;
   border-radius: 5px;
+  cursor: pointer;
 }
 .c,.d,.T,.p{
   border: 1px solid black;
@@ -130,4 +132,6 @@ cursor: pointer;
 }
 .color{
   background-color: yellow;
+  border: 10rem;
 }
+
