@@ -50,9 +50,32 @@ function RightTable() {
             </tr>
           ) :(
             <>
+            
             {
               cityData.map((item,index)=>{
-                console.log(item.name);
+                
+                const arr=item.date_and_time.split(',');
+                const date = arr[0]
+                const time = arr[1]
+                const arr2 = date.split('/')
+                const year = arr2[2]
+                const month= arr2[1]
+                const day = arr2[0]
+                const time_arr=time.split(':')
+                const hour =time_arr[0]
+                const current_date=new Date()
+                const current_year=current_date.getFullYear()
+                const current_month = current_date.getMonth()+1
+                const current_day= current_date.getDate()
+                const current_hour=current_date.getHours()
+                let year_diff=current_year-year
+                let monts_in_prev_year=12-month
+                let months=monts_in_prev_year+current_month
+                let days_in_prev_year=30-day
+                let total_days =days_in_prev_year+current_day
+                
+                let total_hours=year_diff*365*months*total_days*24
+                  let hrs=total_hours+current_hour+(24-hour)
                 return(
                   < DetailTable data={item} 
                     
@@ -62,7 +85,8 @@ function RightTable() {
                   setCityData={setCityData} 
                   cityName={cityName} 
                   allCities={allCities} 
-                  setAllCities={setAllCities}  />
+                  setAllCities={setAllCities} 
+                  hrs={hrs} />
                 )
                 
               })
