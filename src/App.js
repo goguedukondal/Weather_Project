@@ -7,8 +7,8 @@ import { MyContext } from "./Context/Context";
 function App() {
   const [cityData,setCityData] = useState([]);
   const [allCities,setAllCities]  = useState(["London","New York","Los Angeles","Las Vegas"]);
-  const [cityName,setCityName] = useState();
-  const [isCityDataFetched,setIsCityDataFetched] = useState(false);
+  const [cityName,setCityName] = useState("");
+  
 
   return (
     <div className="App">
@@ -18,7 +18,7 @@ function App() {
         setCityData,
         setAllCities,
         cityName,
-        setCityName,isCityDataFetched,setIsCityDataFetched]}>
+        setCityName]}>
       <div className="details_container">
       
         <LeftTable />
@@ -34,3 +34,4 @@ function App() {
 }
 
 export default App;
+
