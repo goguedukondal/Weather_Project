@@ -1,13 +1,14 @@
-import React from "react";
-
 import { MyContext } from "../Context/Context";
 import { useContext } from "react";
 const LeftTable = () => {
-  const [cityData,allCities,setCityData,setAllCities,isCityDataFetched,setIsCityDataFetched] = useContext(MyContext);
+ 
+  const [cityData,allCities,setCityData,setAllCities] = useContext(MyContext);
 
   const fetchingData = () => {
     if(allCities.length>0){
     const query = allCities[0];
+   
+    
     fetch(
       `https://python3-dot-parul-arena-2.appspot.com/test?cityname=${query}`
     )
@@ -15,19 +16,20 @@ const LeftTable = () => {
       .then((data) => {
         
         const newAllCities = allCities.filter((item,index)=>index!==0);
-        setIsCityDataFetched(true);
+       
         setAllCities(newAllCities);
         setCityData( [...cityData,{name:query,...data}]);
        
       });
     }
   };
+  
 
 
   return (
 
     <div className="left_part">
-      {/* {console.log(cityData)} */}
+     
       <button className="get_weather" onClick={fetchingData}>
         Get Weather
       </button>
@@ -40,22 +42,19 @@ const LeftTable = () => {
         </thead>
         <tbody className="t2">
           <tr>
-            <td className={isCityDataFetched?"t":"t0"}>London</td>
-          </tr>
-        
-        
-          <tr>
-            <td className={isCityDataFetched?"t":"t0"}>New York</td>
+            <td className={cityData.length<1?"t0":"t"}>London</td>
           </tr>
        
-        
           <tr>
-            <td className={isCityDataFetched?"t":"t0"}>Los Angeles</td>
+            <td className={cityData.length<2?"t0":"t"}>New York</td>
           </tr>
        
+          <tr>
+            <td className={cityData.length<3?"t0":"t"}>Los Angeles</td>
+          </tr>
         
           <tr>
-            <td className={isCityDataFetched?"t":"t0"}>Las Vegas</td>
+            <td className={cityData.length<4?"t0":"t"}>Las Vegas</td>
           </tr>
         </tbody>
       </table>
